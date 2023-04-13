@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 	14 -> X
 	14 * 100 / 16
 	
+	
 	*/
 	html {
 		font-size: 87.5%;

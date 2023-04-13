@@ -21,6 +21,4 @@ export const defaultTheme = {
     yellow: '#DBAC2C',
     yellowDark: '#C47F17',
   },
-  textSizes: {},
-  fontFamily: {},
 }

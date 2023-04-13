@@ -2,17 +2,26 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   //width: 100%;
+  //max-width: 70rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 10rem;
   background: ${({ theme }) => theme.colors.background};
 
   @media (max-width: 768px) {
-    //padding: 2rem 3rem;
+    padding: 2rem 3rem;
     //padding: 1rem 0;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 3rem;
+    //flex-direction: column;
+  }
+
+  /* @media (max-width: 1280px) {
+    padding: 2rem 3rem;
+  } */
 
   nav {
     display: flex;
@@ -42,5 +51,29 @@ export const HeaderContainer = styled.header`
   }
 
   .cart {
+    width: 2.375rem;
+    height: 2.375rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+
+    background: ${({ theme }) => theme.colors.yellowLight};
+    color: ${({ theme }) => theme.colors.yellowDark};
+
+    span {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: -0.522rem;
+      top: -0.5rem;
+      border-radius: 6.25rem;
+      background: ${({ theme }) => theme.colors.yellowDark};
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 `
