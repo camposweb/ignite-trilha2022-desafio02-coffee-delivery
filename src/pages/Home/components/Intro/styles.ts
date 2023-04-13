@@ -45,7 +45,13 @@ export const ImgContainer = styled.div`
 
     img {
       margin-top: 1.5rem;
-      width: 40vh;
+      width: 40vw;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    img {
+      width: 40vw;
     }
   }
 `
@@ -62,5 +68,10 @@ export const ItemsContainer = styled.div`
     grid-template-columns: 1fr;
     justify-content: center;
     flex-direction: column;
+  }
+
+  @media (max-width: 1080px) {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
   }
 `

@@ -24,7 +24,12 @@ export const CoffeeCardContainer = styled.div`
 
   @media (max-width: 768px) {
     //text-align: center;
-    spadding: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 1080px) {
+    //text-align: center;
+    padding: 0 3rem;
   }
 `
 /* @media (max-width: 768px) {
