@@ -26,12 +26,4 @@ export const CoffeeCardContainer = styled.div`
     //text-align: center;
     padding: 0;
   }
-
-  @media (max-width: 1080px) {
-    //text-align: center;
-    padding: 0 3rem;
-  }
 `
-/* @media (max-width: 768px) {
-  
-} */
