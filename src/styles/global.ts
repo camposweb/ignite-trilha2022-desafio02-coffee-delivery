@@ -13,6 +13,16 @@ export const GlobalStyle = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		appearance: textfield;
+	}
 	
 	@media (max-width: 768px) {
 	/* 

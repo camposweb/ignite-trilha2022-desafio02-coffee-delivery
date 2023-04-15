@@ -44,8 +44,8 @@ export const ImgContainer = styled.div`
     justify-content: center;
 
     img {
-      margin-top: 1.5rem;
-      width: 40vw;
+      margin-top: 2rem;
+      width: 60vw;
     }
   }
 `

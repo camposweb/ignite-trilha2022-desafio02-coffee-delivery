@@ -8,6 +8,10 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 2rem 10rem;
   background: ${({ theme }) => theme.colors.background};
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
 
   @media (max-width: 768px) {
     padding: 2rem 3rem;

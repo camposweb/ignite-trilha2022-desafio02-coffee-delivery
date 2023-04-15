@@ -31,8 +31,12 @@ const BaseButtonS = styled(BaseButton)`
 `
 
 export const ButtonCoffeCard = styled(BaseButtonS)`
+  display: flex;
+  width: 2.375rem;
+  height: 2.375rem;
   color: ${({ theme }) => theme.colors.card};
   background: ${({ theme }) => theme.colors.purpleDark};
+  transition: 0.4s;
 
   &:hover {
     //color: ${({ theme }) => theme.colors.card};

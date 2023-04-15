@@ -1,4 +1,10 @@
-import { ButtonContainer, CoffeeCardInfo, InputButton } from './styles'
+import {
+  AddCartContainer,
+  CardFooterContainer,
+  CoffeeCardInfo,
+  TagContainer,
+  TextContainer,
+} from './styles'
 import {
   Label,
   Tag,
@@ -8,6 +14,7 @@ import {
 } from '../../../../components/Fonts'
 import { ButtonCoffeCard } from '../../../../components/Button'
 import { ShoppingCart } from 'phosphor-react'
+import { ButtonQuantity } from '../../../../components/ButtonQuantity'
 
 export interface CoffeeCardType {
   id: string
@@ -24,31 +31,33 @@ interface CoffeeCardProps {
 
 export function CoffeeCard({ cards }: CoffeeCardProps) {
   const formatPrice = new Intl.NumberFormat('pt-BR', {
-    /* style: 'currency',
-    currency: 'BRL', */
     minimumSignificantDigits: 3,
   }).format(cards.price)
 
   return (
     <CoffeeCardInfo>
-      <img src={cards.urlImg} alt="" />
-      <div>
-        <div>
-          {cards.tags.map((tag) => {
-            return <Tag key={`${cards.id}-${tag}`}>{tag}</Tag>
-          })}
-        </div>
+      <img src={cards.urlImg} alt={cards.title} />
+      <TagContainer>
+        {cards.tags.map((tag) => {
+          return <Tag key={`${cards.id}-${tag}`}>{tag}</Tag>
+        })}
+      </TagContainer>
+      <TextContainer>
         <TitleS>{cards.title}</TitleS>
         <Label>{cards.description}</Label>
-        <ButtonContainer>
+      </TextContainer>
+      <CardFooterContainer>
+        <div>
           <TextRegularS>R$ </TextRegularS>
           <TitleM>{formatPrice}</TitleM>
-          <InputButton type="number" />
+        </div>
+        <AddCartContainer>
+          <ButtonQuantity />
           <ButtonCoffeCard>
             <ShoppingCart size={20} weight="fill" />
           </ButtonCoffeCard>
-        </ButtonContainer>
-      </div>
+        </AddCartContainer>
+      </CardFooterContainer>
     </CoffeeCardInfo>
   )
 }

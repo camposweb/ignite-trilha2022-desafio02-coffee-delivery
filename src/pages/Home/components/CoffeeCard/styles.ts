@@ -9,56 +9,61 @@ export const CoffeeCardInfo = styled.div`
 
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  /* text-align: center;
+  align-items: center; */
 
   img {
     position: absolute;
     top: -1.25rem;
     left: calc(50% - 7.5rem / 2);
   }
+`
 
-  div {
-    display: flex;
-    margin-top: 7rem;
-    //margin: 0 auto;
-    align-items: center;
-    text-align: center;
-    //justify-content: center;
-    flex-direction: column;
-    padding: 0 1.25rem;
+export const TagContainer = styled.div`
+  display: flex;
+  margin-top: 7rem;
+  //margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0 1.25rem;
+  gap: 0.25rem;
 
-    /* @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
       margin-top: 2rem;
     } */
-
-    div {
-      display: flex;
-      //align-items: center;
-      //justify-content: center;
-      flex-direction: row;
-      gap: 0.25rem;
-      margin-top: 0.75rem;
-      margin-bottom: 1rem;
-    }
-  }
 `
 
-export const ButtonContainer = styled.div`
+export const TextContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+`
+
+export const CardFooterContainer = styled.div`
+  display: flex;
+  width: 100%;
   justify-content: space-between;
+  //align-items: center;
+  margin-top: 2.063rem;
+  padding: 0 1.5rem;
+
+  /* > div {
+    display: flex;
+    align-items: center;
+    //gap: 0.5rem;
+  } */
 `
 
-export const InputButton = styled.input.attrs({
-  type: 'number',
-  defaultValue: 1,
-  min: 1,
-})`
+export const AddCartContainer = styled.div`
   display: flex;
-  //flex: 1;
-  width: 4.5rem;
-
-  ::-webkit-calendar-picker-indicator {
-    display: none !important;
-    color: black;
-    background-color: black;
-  }
+  gap: 0.5rem;
+  width: 7.375rem;
 `
