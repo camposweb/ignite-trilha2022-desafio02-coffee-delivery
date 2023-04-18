@@ -18,11 +18,6 @@ export const HeaderContainer = styled.header`
     //padding: 1rem 0;
   }
 
-  @media (max-width: 768px) {
-    padding: 2rem 3rem;
-    //flex-direction: column;
-  }
-
   /* @media (max-width: 1280px) {
     padding: 2rem 3rem;
   } */

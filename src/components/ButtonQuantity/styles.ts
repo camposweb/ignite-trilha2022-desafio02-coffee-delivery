@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const ButtonQuantityContainer = styled.div`
   display: flex;
   flex: 1;
+  width: 4.5rem;
   align-items: center;
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.button};
