@@ -19,6 +19,10 @@ export const CartContent = styled.div`
   //padding: 3rem 0;
   border-radius: 0.375rem 2.75rem;
   background: ${({ theme }) => theme.colors.card};
+
+  @media (width: 1366px) {
+    //padding: 1.5rem 1.5rem;
+  }
 `
 
 export const CartPrices = styled.div`

@@ -11,6 +11,8 @@ import {
   Separator,
 } from './styles'
 
+interface CartItemProps {}
+
 export function CartItem() {
   return (
     <>

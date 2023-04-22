@@ -23,7 +23,8 @@ export const CoffeeCardContainer = styled.div`
   margin-top: 3.375rem;
 
   @media (max-width: 768px) {
-    //text-align: center;
+    //text-align: center;\
     padding: 0;
+    grid-template-columns: 1fr;
   }
 `

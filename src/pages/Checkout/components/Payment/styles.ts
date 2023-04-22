@@ -50,6 +50,10 @@ export const PaymentOptionContainer = styled.div`
     font-weight: 400;
     font-size: 0.75rem;
     line-height: 1.188rem;
+
+    @media (width: 1366px) {
+      gap: 0.1rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -58,6 +62,10 @@ export const PaymentOptionContainer = styled.div`
     }
 
     flex-direction: column;
+  }
+
+  @media (width: 1366px) {
+    gap: 0.1rem;
   }
 `
 
