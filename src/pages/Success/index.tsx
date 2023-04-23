@@ -29,54 +29,52 @@ export function Success() {
           Agora é só aguardar que logo o café chegará até você
         </TextRegularL>
       </SuccessTitle>
-      {
-        <SuccessContent>
-          <SuccessInfoContainer>
-            <div className="container">
-              <SuccessInfo>
-                <SuccessIcon
-                  icon={<MapPin weight="fill" />}
-                  iconBg={colors.purple}
-                />
+      <SuccessContent>
+        <SuccessInfoContainer>
+          <div className="container">
+            <SuccessInfo>
+              <SuccessIcon
+                icon={<MapPin weight="fill" />}
+                iconBg={colors.purple}
+              />
+              <div>
+                <TextRegularM>Entrega em </TextRegularM>
+                <TextBoldM>Rua João Daniel Martinelli, 102</TextBoldM>
                 <div>
-                  <TextRegularM>Entrega em </TextRegularM>
-                  <TextBoldM>Rua João Daniel Martinelli, 102</TextBoldM>
-                  <div>
-                    <TextRegularM>Farrapos - Porto Alegre, RS</TextRegularM>
-                  </div>
+                  <TextRegularM>Farrapos - Porto Alegre, RS</TextRegularM>
                 </div>
-              </SuccessInfo>
-              <SuccessInfo>
-                <SuccessIcon
-                  icon={<Timer weight="fill" />}
-                  iconBg={colors.yellow}
-                />
+              </div>
+            </SuccessInfo>
+            <SuccessInfo>
+              <SuccessIcon
+                icon={<Timer weight="fill" />}
+                iconBg={colors.yellow}
+              />
+              <div>
+                <TextRegularM>Previsão de entrega</TextRegularM>
                 <div>
-                  <TextRegularM>Previsão de entrega</TextRegularM>
-                  <div>
-                    <TextBoldM>20 min - 30 min</TextBoldM>
-                  </div>
+                  <TextBoldM>20 min - 30 min</TextBoldM>
                 </div>
-              </SuccessInfo>
-              <SuccessInfo>
-                <SuccessIcon
-                  icon={<CurrencyDollar weight="fill" />}
-                  iconBg={colors.yellowDark}
-                />
+              </div>
+            </SuccessInfo>
+            <SuccessInfo>
+              <SuccessIcon
+                icon={<CurrencyDollar weight="fill" />}
+                iconBg={colors.yellowDark}
+              />
+              <div>
+                <TextRegularM>Pagamento na entrega</TextRegularM>
                 <div>
-                  <TextRegularM>Pagamento na entrega</TextRegularM>
-                  <div>
-                    <TextBoldM>Cartão de Crédito</TextBoldM>
-                  </div>
+                  <TextBoldM>Cartão de Crédito</TextBoldM>
                 </div>
-              </SuccessInfo>
-            </div>
-          </SuccessInfoContainer>
-          <SuccessImg>
-            <img src={ImgConfirm} alt="" />
-          </SuccessImg>
-        </SuccessContent>
-      }
+              </div>
+            </SuccessInfo>
+          </div>
+        </SuccessInfoContainer>
+        <SuccessImg>
+          <img src={ImgConfirm} alt="" />
+        </SuccessImg>
+      </SuccessContent>
       <div className="link">
         <NavLink to="/">voltar para home</NavLink>
       </div>
