@@ -1,7 +1,9 @@
+import { CartEmptyContainer } from './styles'
+
 export function CartEmpty() {
   return (
-    <div>
+    <CartEmptyContainer>
       <h1>kjkj</h1>
-    </div>
+    </CartEmptyContainer>
   )
 }
