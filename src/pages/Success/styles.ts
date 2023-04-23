@@ -95,8 +95,9 @@ export const SuccessContent = styled.div`
 
 export const SuccessInfoContainer = styled.div`
   display: flex;
-  width: 100%;
-  //min-width: 32rem;
+  //width: 100%;
+  //max-width: 32.875rem;
+  min-width: 32.875rem;
   flex-direction: column;
   border-radius: 6px 36px;
   padding: 1px;
@@ -105,13 +106,17 @@ export const SuccessInfoContainer = styled.div`
   .container {
     display: flex;
     //min-width: 32rem;
-    //width: 100%;
+    width: 100%;
     flex-direction: column;
     height: 100%;
     padding: 2.5rem;
     gap: 2rem;
     background: ${({ theme }) => theme.colors.background};
     border-radius: inherit;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 100%;
   }
 `
 
