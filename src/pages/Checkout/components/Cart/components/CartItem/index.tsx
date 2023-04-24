@@ -2,7 +2,6 @@ import { Trash } from 'phosphor-react'
 import { ButtonRemove } from '../../../../../../components/Button'
 import { ButtonQuantity } from '../../../../../../components/ButtonQuantity'
 import { TextBoldM, TextRegularM } from '../../../../../../components/Fonts'
-import { coffeeImage } from '../../../../../Home/components/CoffeList/assets'
 import {
   CartItemContainer,
   CartItemImg,
@@ -10,27 +9,56 @@ import {
   CartItemPrice,
   Separator,
 } from './styles'
+import { CartItemProps } from '../../../../../../contexts/CartContext'
+import { useCart } from '../../../../../../hooks/useCart'
 
-interface CartItemProps {}
+interface CoffeeCartItemProps {
+  coffee: CartItemProps
+}
 
-export function CartItem() {
+export function CartItem({ coffee }: CoffeeCartItemProps) {
+  const { changeCartItemQuantity, removeCartItem } = useCart()
+
+  const formatPrice = new Intl.NumberFormat('pt-BR', {
+    minimumSignificantDigits: 3,
+  }).format(coffee.price)
+
+  function handleIncrease() {
+    changeCartItemQuantity(coffee.id, 'increase')
+  }
+
+  function handleDecrease() {
+    if (coffee.quantity <= 1) {
+      return
+    }
+    changeCartItemQuantity(coffee.id, 'decrease')
+  }
+
+  function handleRemoveItem() {
+    removeCartItem(coffee.id)
+  }
+
   return (
     <>
       <CartItemContainer>
         <CartItemImg>
-          <img src={coffeeImage.expressoTracional} alt="" />
+          <img src={coffee.urlImg} alt="" />
         </CartItemImg>
         <CartItemInfo>
-          <TextRegularM>Expresso Tradicional</TextRegularM>
+          <TextRegularM>{coffee.title}</TextRegularM>
           <div>
-            <ButtonQuantity />
-            <ButtonRemove>
+            <ButtonQuantity
+              onIncrease={handleIncrease}
+              onDecrease={handleDecrease}
+              quantity={coffee.quantity}
+            />
+            <ButtonRemove onClick={handleRemoveItem}>
               <Trash size={16} weight="thin" /> remover
             </ButtonRemove>
           </div>
         </CartItemInfo>
         <CartItemPrice>
-          <TextBoldM>R$ 9,90</TextBoldM>
+          <TextBoldM>R$ {formatPrice}</TextBoldM>
         </CartItemPrice>
       </CartItemContainer>
       <Separator />

@@ -65,7 +65,9 @@ export const HeaderContainer = styled.header`
       width: 1.25rem;
       height: 1.25rem;
       display: flex;
+      text-align: center;
       align-items: center;
+      justify-items: center;
       justify-content: center;
       position: absolute;
       right: -0.522rem;

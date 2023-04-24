@@ -1,28 +1,24 @@
 import { Minus, Plus } from 'phosphor-react'
 import { ButtonIcon, ButtonQuantityContainer } from './styles'
-import { useState } from 'react'
 
-export function ButtonQuantity() {
-  const [quantity, setQuantity] = useState<number>(1)
+interface ButtonQuantityProps {
+  quantity: number
+  onIncrease: () => void
+  onDecrease: () => void
+}
 
-  function handleDecrement() {
-    if (quantity <= 1) {
-      return
-    }
-    setQuantity(quantity - 1)
-  }
-
-  function handleIncrement() {
-    setQuantity(quantity + 1)
-  }
-
+export function ButtonQuantity({
+  quantity,
+  onIncrease,
+  onDecrease,
+}: ButtonQuantityProps) {
   return (
     <ButtonQuantityContainer>
-      <ButtonIcon onClick={handleDecrement}>
+      <ButtonIcon onClick={onDecrease}>
         <Minus size={14} weight="fill" />
       </ButtonIcon>
       <input type="number" defaultValue={1} min={1} value={quantity} readOnly />
-      <ButtonIcon onClick={handleIncrement}>
+      <ButtonIcon onClick={onIncrease}>
         <Plus size={14} weight="fill" />
       </ButtonIcon>
     </ButtonQuantityContainer>

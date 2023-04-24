@@ -3,8 +3,11 @@ import logoCoffeeDelivery from '../../assets/logo-coffee-delivery.svg'
 import { NavLink } from 'react-router-dom'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { TextBoldS } from '../Fonts'
+import { useCart } from '../../hooks/useCart'
 
 export function Header() {
+  const { cartQuantityItem } = useCart()
+
   return (
     <HeaderContainer>
       <NavLink to="/" title="Home">
@@ -17,7 +20,11 @@ export function Header() {
         </NavLink>
         <NavLink to="/checkout" title="Carrinho" className="cart">
           <ShoppingCart size={19} weight="fill" />
-          {/* <TextBoldS>3</TextBoldS> */}
+          {cartQuantityItem >= 1 ? (
+            <TextBoldS>{cartQuantityItem}</TextBoldS>
+          ) : (
+            ''
+          )}
         </NavLink>
       </nav>
     </HeaderContainer>

@@ -5,41 +5,44 @@ import {
   TextRegularS,
   TitleXS,
 } from '../../../../components/Fonts'
-/* import { coffeeImage } from '../../../Home/components/CoffeList/assets'
-import { CoffeeCardType } from '../../../Home/components/CoffeeCard' */
+import { useCart } from '../../../../hooks/useCart'
 import { CartItem } from './components/CartItem'
 import { CartContainer, CartContent, CartPrices } from './styles'
 
-/* const carts: CoffeeCardType[] = [
-  {
-    id: crypto.randomUUID(),
-    tags: ['tradicional'],
-    urlImg: coffeeImage.expressoTracional,
-    title: 'Expresso Tradicional',
-    description: 'O tradicional café feito com água quente e grãos moídos',
-    price: 9.9,
-  },
-] */
-
 export function Cart() {
+  const { cartItems, cartItemsTotal, priceDelivery, cartTotalPrice } = useCart()
+
+  const formatPriceItems = new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+  }).format(cartItemsTotal)
+
+  const formatPriceDelivery = new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+  }).format(priceDelivery)
+
+  const formatPriceTotal = new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+  }).format(cartTotalPrice)
+
   return (
     <CartContainer>
       <TitleXS>Cafés selecionados</TitleXS>
       <CartContent>
-        <CartItem />
-        <CartItem />
+        {cartItems.map((item) => {
+          return <CartItem key={item.id} coffee={item} />
+        })}
         <CartPrices>
           <div>
             <TextRegularS>Total de itens</TextRegularS>
-            <TextRegularM>R$ 29,70</TextRegularM>
+            <TextRegularM>R$ {formatPriceItems}</TextRegularM>
           </div>
           <div>
             <TextRegularS>Entrega</TextRegularS>
-            <TextRegularM>R$ 3,50</TextRegularM>
+            <TextRegularM>R$ {formatPriceDelivery}</TextRegularM>
           </div>
           <div>
             <TextBoldL>Total</TextBoldL>
-            <TextBoldL>R$ 33,20</TextBoldL>
+            <TextBoldL>R$ {formatPriceTotal}</TextBoldL>
           </div>
         </CartPrices>
         <ButtonConfirm>confirmar pedido</ButtonConfirm>

@@ -1,9 +1,10 @@
+import { TextRegularL } from '../../../../components/Fonts'
 import { CartEmptyContainer } from './styles'
 
 export function CartEmpty() {
   return (
     <CartEmptyContainer>
-      <h1>kjkj</h1>
+      <TextRegularL>Não existe item no carrinho</TextRegularL>
     </CartEmptyContainer>
   )
 }

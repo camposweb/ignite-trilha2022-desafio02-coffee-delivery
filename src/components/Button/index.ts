@@ -49,7 +49,9 @@ export const ButtonRemove = styled(BaseButtonS)`
   }
 `
 
-export const ButtonCoffeCard = styled(BaseButtonS)`
+export const ButtonCoffeCard = styled(BaseButtonS).attrs({
+  type: 'button',
+})`
   display: flex;
   width: 2.375rem;
   height: 2.375rem;
