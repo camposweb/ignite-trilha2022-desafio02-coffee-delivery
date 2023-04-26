@@ -7,11 +7,8 @@ export function CartEmpty() {
     <CartEmptyContainer>
       <CartEmptyContent>
         <div>
-          {/* <TextRegularL>O carrinho está vazio</TextRegularL> */}
           <TitleM>O carrinho está vazio</TitleM>
-          <NavLink to="/" className="link">
-            voltar para home
-          </NavLink>
+          <NavLink to="/">voltar para home</NavLink>
         </div>
       </CartEmptyContent>
     </CartEmptyContainer>

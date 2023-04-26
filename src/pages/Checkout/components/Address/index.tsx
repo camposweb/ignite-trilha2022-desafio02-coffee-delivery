@@ -8,18 +8,24 @@ import {
   AddressContainer,
   AddressHeader,
   AddressInfo,
-  InputCep,
-  InputCity,
-  InputComplement,
   InputContainer,
-  InputLocale,
-  InputNumber,
-  InputStreet,
-  InputUF,
 } from './styles'
 import { Payment } from '../Payment'
+import { useFormContext } from 'react-hook-form'
+import { Input } from '../../../../components/Input'
+
+interface ErrorType {
+  errors: {
+    [key: string]: {
+      message: string
+    }
+  }
+}
 
 export function Address() {
+  const { register, formState } = useFormContext()
+  const { errors } = formState as unknown as ErrorType
+
   return (
     <AddressContainer>
       <TitleXS>Complete seu pedido</TitleXS>
@@ -34,16 +40,56 @@ export function Address() {
           </div>
         </AddressHeader>
         <InputContainer>
-          <InputCep />
-          <InputStreet />
+          <Input
+            type="number"
+            placeholder="CEP"
+            className="cep"
+            {...register('cep')}
+            error={errors.cep?.message}
+          />
+          <Input
+            type="text"
+            placeholder="Rua"
+            {...register('street')}
+            error={errors.street?.message}
+          />
           <div>
-            <InputNumber />
-            <InputComplement />
+            <Input
+              type="number"
+              placeholder="Número"
+              className="inputNumber"
+              {...register('number', { valueAsNumber: true })}
+              error={errors.number?.message}
+            />
+            <Input
+              type="text"
+              placeholder="Complemento"
+              className="complement"
+              {...register('complement')}
+              error={errors.complement?.message}
+            />
           </div>
           <div>
-            <InputLocale />
-            <InputCity />
-            <InputUF />
+            <Input
+              type="text"
+              placeholder="Bairro"
+              {...register('locale')}
+              error={errors.locale?.message}
+            />
+            <Input
+              type="text"
+              placeholder="Cidade"
+              className="city"
+              {...register('city')}
+              error={errors.city?.message}
+            />
+            <Input
+              type="text"
+              placeholder="UF"
+              className="uf"
+              {...register('uf')}
+              error={errors.uf?.message}
+            />
           </div>
         </InputContainer>
       </AddressInfo>

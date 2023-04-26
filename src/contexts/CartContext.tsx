@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 import { CoffeeCardType } from '../pages/Home/components/CoffeeCard'
 import { produce } from 'immer'
 
@@ -15,6 +15,7 @@ interface CartContextType {
     type: 'increase' | 'decrease',
   ) => void
   removeCartItem: (cartItemId: string) => void
+  cleanCart: () => void
   cartItemsTotal: number
   priceDelivery: number
   cartTotalPrice: number
@@ -27,7 +28,13 @@ interface CartContextProviderProps {
 export const CartContext = createContext({} as CartContextType)
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartItems, setCartItems] = useState<CartItemProps[]>([])
+  const [cartItems, setCartItems] = useState<CartItemProps[]>(() => {
+    const storedCartItems = localStorage.getItem('coffeeDelivery:cartItems')
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems)
+    }
+    return []
+  })
   const cartQuantityItem = cartItems.length
   const priceDelivery = 3.5
 
@@ -86,6 +93,14 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     setCartItems(removeItem)
   }
 
+  function cleanCart() {
+    setCartItems([])
+  }
+
+  useEffect(() => {
+    localStorage.setItem('coffeeDelivery:cartItems', JSON.stringify(cartItems))
+  }, [cartItems])
+
   return (
     <CartContext.Provider
       value={{
@@ -97,6 +112,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         cartItemsTotal,
         priceDelivery,
         cartTotalPrice,
+        cleanCart,
       }}
     >
       {children}

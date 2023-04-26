@@ -17,6 +17,7 @@ import { ShoppingCart } from 'phosphor-react'
 import { ButtonQuantity } from '../../../../components/ButtonQuantity'
 import { useCart } from '../../../../hooks/useCart'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 export interface CoffeeCardType {
   id: string
   urlImg: string
@@ -49,12 +50,15 @@ export function CoffeeCard({ cards }: CoffeeCardProps) {
     minimumFractionDigits: 2,
   }).format(cards.price)
 
+  const navigate = useNavigate()
+
   function handleAddCoffeeCart() {
     const coffeeAdd = {
       ...cards,
       quantity,
     }
     addCoffeeCart(coffeeAdd)
+    navigate('/checkout')
   }
 
   return (

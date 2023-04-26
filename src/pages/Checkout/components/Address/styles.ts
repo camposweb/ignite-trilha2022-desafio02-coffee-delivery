@@ -42,6 +42,37 @@ export const InputContainer = styled.div`
   gap: 1rem;
   //padding: 0 2.5rem;
 
+  .cep {
+    width: 12.5rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  .inputNumber {
+    width: 12.5rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  .complement {
+    width: 100%;
+  }
+
+  .city {
+    width: 100%;
+  }
+
+  .uf {
+    width: 3.75rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
   div {
     //width: 100%;
     display: flex;
@@ -85,63 +116,6 @@ export const BaseInput = styled.input.attrs({
     /* border: ${({ theme }) => theme.colors.yellowDark}; */
     box-shadow: 0 0 0 0.063rem ${({ theme }) => theme.colors.yellowDark};
   }
-`
-
-export const InputCep = styled(BaseInput).attrs({
-  type: 'number',
-  placeholder: 'CEP',
-  required: true,
-})`
-  width: 12.5rem;
-`
-
-export const InputStreet = styled(BaseInput).attrs({
-  type: 'text',
-  placeholder: 'Rua',
-  required: true,
-})`
-  //width: 100%;
-`
-
-export const InputNumber = styled(BaseInput).attrs({
-  type: 'number',
-  placeholder: 'Número',
-  required: true,
-})`
-  width: 12.5rem;
-`
-
-export const InputComplement = styled(BaseInput).attrs({
-  type: 'text',
-  placeholder: 'Complemento',
-  required: false,
-})`
-  width: 100%;
-`
-
-export const InputLocale = styled(BaseInput).attrs({
-  type: 'text',
-  placeholder: 'Bairro',
-  required: true,
-})`
-  //width: 12.5rem;
-`
-
-export const InputCity = styled(BaseInput).attrs({
-  type: 'text',
-  placeholder: 'Cidade',
-  required: true,
-})`
-  //width: 17.25rem;
-  width: 100%;
-`
-
-export const InputUF = styled(BaseInput).attrs({
-  type: 'text',
-  placeholder: 'UF',
-  required: true,
-})`
-  width: 3.75rem;
 `
 
 export const PaymentContainer = styled.div``

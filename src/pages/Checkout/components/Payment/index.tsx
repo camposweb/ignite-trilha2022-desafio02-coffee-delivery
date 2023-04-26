@@ -1,13 +1,25 @@
 import { Bank, CreditCard, CurrencyDollar, Money } from 'phosphor-react'
 import { TextRegularM, TextRegularS } from '../../../../components/Fonts'
 import {
-  InputPaymentOption,
   PaymentContainer,
   PaymentHeader,
   PaymentOptionContainer,
 } from './styles'
+import { useFormContext } from 'react-hook-form'
+import { InputRadioMethod } from './component/InputRadioMethod'
+
+interface ErrorType {
+  errors: {
+    [key: string]: {
+      message: string
+    }
+  }
+}
 
 export function Payment() {
+  const { register, formState } = useFormContext()
+  const { errors } = formState as unknown as ErrorType
+
   return (
     <PaymentContainer>
       <PaymentHeader>
@@ -20,19 +32,37 @@ export function Payment() {
         </div>
       </PaymentHeader>
       <PaymentOptionContainer>
-        <InputPaymentOption id="credit" />
+        <InputRadioMethod
+          type="radio"
+          id="credit"
+          {...register('method')}
+          value="Cartão de crédito"
+        />
         <label htmlFor="credit">
           <CreditCard size={16} color="#8047F8" /> cartão de crédito
         </label>
-        <InputPaymentOption id="debit" />
+        <InputRadioMethod
+          type="radio"
+          id="debit"
+          {...register('method')}
+          value="Cartão de débito"
+        />
         <label htmlFor="debit">
           <Bank size={16} color="#8047F8" /> cartão de débito
         </label>
-        <InputPaymentOption id="dinheiro" />
-        <label htmlFor="dinheiro">
+        <InputRadioMethod
+          type="radio"
+          id="money"
+          {...register('method')}
+          value="Dinheiro"
+        />
+        <label htmlFor="money">
           <Money size={16} color="#8047F8" /> dinheiro
         </label>
       </PaymentOptionContainer>
+      {errors.method?.message && (
+        <TextRegularS>{errors.method?.message}</TextRegularS>
+      )}
     </PaymentContainer>
   )
 }

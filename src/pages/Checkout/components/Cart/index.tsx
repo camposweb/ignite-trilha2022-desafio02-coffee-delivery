@@ -45,7 +45,7 @@ export function Cart() {
             <TextBoldL>R$ {formatPriceTotal}</TextBoldL>
           </div>
         </CartPrices>
-        <ButtonConfirm>confirmar pedido</ButtonConfirm>
+        <ButtonConfirm type="submit">confirmar pedido</ButtonConfirm>
       </CartContent>
     </CartContainer>
   )

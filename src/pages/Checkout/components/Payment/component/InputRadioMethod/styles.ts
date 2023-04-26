@@ -1,34 +1,5 @@
 import styled from 'styled-components'
 
-export const PaymentContainer = styled.div`
-  //width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.938rem;
-  padding: 2.5rem;
-  border-radius: 0.375rem;
-  background: ${({ theme }) => theme.colors.card};
-
-  > span {
-    margin-top: 1rem;
-    color: ${({ theme }) => theme.colors.error};
-  }
-`
-export const PaymentHeader = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  //margin-top: 2.5rem;
-  //padding: 0 2.5rem;
-
-  div {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  }
-`
-
 export const PaymentOptionContainer = styled.div`
   display: flex;
   width: 100%;
@@ -74,10 +45,7 @@ export const PaymentOptionContainer = styled.div`
   }
 `
 
-/* export const InputPaymentOption = styled.input.attrs({
-  type: 'radio',
-  name: 'method',
-})`
+export const InputPaymentOption = styled.input`
   visibility: hidden;
   appearance: none;
 
@@ -91,4 +59,4 @@ export const PaymentOptionContainer = styled.div`
     background: ${({ theme }) => theme.colors.hover};
     color: ${({ theme }) => theme.colors.subtitle};
   }
-` */
+`

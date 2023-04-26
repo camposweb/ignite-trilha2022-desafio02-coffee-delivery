@@ -5,7 +5,7 @@ export const CheckoutContainer = styled.main`
   margin-bottom: 9.8rem;
 `
 
-export const CheckoutContentContainer = styled.div`
+export const CheckoutContentContainer = styled.form`
   display: flex;
   padding: 0 10rem;
   justify-content: space-between;

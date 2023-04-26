@@ -16,10 +16,30 @@ import ImgConfirm from '../../assets/img-confirm.svg'
 import { SuccessIcon } from './components/SuccessIcon'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { useTheme } from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { OrderData } from '../Checkout'
+import { useEffect } from 'react'
+
+interface LocationType {
+  state: OrderData
+}
 
 export function Success() {
   const { colors } = useTheme()
+
+  const { state } = useLocation() as unknown as LocationType
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/')
+    }
+  })
+
+  if (!state) {
+    return <></>
+  }
 
   return (
     <SuccessContainer>
@@ -39,9 +59,13 @@ export function Success() {
               />
               <div>
                 <TextRegularM>Entrega em </TextRegularM>
-                <TextBoldM>Rua João Daniel Martinelli, 102</TextBoldM>
+                <TextBoldM>
+                  {state.street}, {state.number}
+                </TextBoldM>
                 <div>
-                  <TextRegularM>Farrapos - Porto Alegre, RS</TextRegularM>
+                  <TextRegularM>
+                    {state.locale} - {state.city}, {state.uf}
+                  </TextRegularM>
                 </div>
               </div>
             </SuccessInfo>
@@ -65,7 +89,7 @@ export function Success() {
               <div>
                 <TextRegularM>Pagamento na entrega</TextRegularM>
                 <div>
-                  <TextBoldM>Cartão de Crédito</TextBoldM>
+                  <TextBoldM>{state.method}</TextBoldM>
                 </div>
               </div>
             </SuccessInfo>
