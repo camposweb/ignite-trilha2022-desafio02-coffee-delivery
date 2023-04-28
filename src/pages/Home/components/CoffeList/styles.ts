@@ -8,9 +8,22 @@ export const CoffeeListContainer = styled.main`
   /* background: ${({ theme }) => theme.colors.background}; */
 
   @media (max-width: 768px) {
-    margin-top: 5rem;
     text-align: center;
     padding: 0;
+  }
+
+  @media (max-width: 820px) {
+    > strong {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 926px) {
+    padding: 0 3rem;
+  }
+
+  @media (max-width: 1080px) {
+    padding: 0 3rem;
   }
 `
 
@@ -23,8 +36,26 @@ export const CoffeeCardContainer = styled.div`
   margin-top: 3.375rem;
 
   @media (max-width: 768px) {
-    //text-align: center;\
+    margin-top: 2rem;
     padding: 0;
     grid-template-columns: 1fr;
+  }
+
+  /*  @media (width: 810px) {
+    grid-template-columns: 1fr 1fr;
+    //padding: 0;
+    //place-items: initial;
+  } */
+
+  @media (width: 926px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (width: 1080px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    //padding: 0;
+    //place-items: center;
+    place-self: center;
   }
 `

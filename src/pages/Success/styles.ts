@@ -20,13 +20,10 @@ export const SuccessContainer = styled.main`
       padding: 0.75rem 2.813rem;
       border-radius: 0.375rem;
       outline: none;
-      //cursor: pointer;
       border: 2px solid ${({ theme }) => theme.colors.yellowDark};
       text-decoration: none;
       transition: 0.2s;
-      /* box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.yellowDark}; */
       color: ${({ theme }) => theme.colors.subtitle};
-      //background: ${({ theme }) => theme.colors.yellow};
       background: transparent;
 
       &:hover {
@@ -40,10 +37,8 @@ export const SuccessContainer = styled.main`
     padding: 0 3rem;
 
     .link {
-      //justify-content: center;
       margin-top: 1rem;
 
-      //width: 100%;
       a {
         width: 100%;
         padding: 0.75rem 0;
@@ -56,16 +51,18 @@ export const SuccessContainer = styled.main`
     padding: 0 3rem;
 
     .link {
-      //justify-content: center;
       margin-top: 1rem;
 
-      //width: 100%;
       a {
         width: 100%;
         padding: 0.75rem 0;
         text-align: center;
       }
     }
+  }
+
+  @media (max-width: 1080px) {
+    padding: 0 3rem;
   }
 `
 
@@ -84,7 +81,6 @@ export const SuccessContent = styled.div`
   margin-top: 2.5rem;
   gap: 6.375rem;
   @media (max-width: 768px) {
-    //padding: 0 3rem;
     flex-direction: column;
   }
 
@@ -95,8 +91,6 @@ export const SuccessContent = styled.div`
 
 export const SuccessInfoContainer = styled.div`
   display: flex;
-  //width: 100%;
-  //max-width: 32.875rem;
   min-width: 32.875rem;
   flex-direction: column;
   border-radius: 6px 36px;
@@ -105,7 +99,6 @@ export const SuccessInfoContainer = styled.div`
 
   .container {
     display: flex;
-    //min-width: 32rem;
     width: 100%;
     flex-direction: column;
     height: 100%;
@@ -123,17 +116,10 @@ export const SuccessInfoContainer = styled.div`
 export const SuccessInfo = styled.div`
   display: flex;
   gap: 0.75rem;
-  //inset: -1;
   div {
     flex-direction: column;
   }
 `
-
-/* export const SuccessIcon = styled.span`
-  display: flex;
-  width: 2rem;
-  height: 2rem;
-` */
 
 export const SuccessImg = styled.div`
   display: flex;
@@ -141,7 +127,5 @@ export const SuccessImg = styled.div`
 
   img {
     width: 100%;
-    justify-content: flex-end;
-    justify-items: flex-end;
   }
 `

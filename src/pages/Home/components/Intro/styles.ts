@@ -19,10 +19,17 @@ export const IntroContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    /* margin: 0 auto;
-    justify-content: center; */
     padding: 0 3rem;
     flex-direction: column;
+  }
+
+  @media (max-width: 926px) {
+    padding: 0 3rem;
+    flex-direction: column;
+  }
+
+  @media (max-width: 1080px) {
+    padding: 2rem 3rem;
   }
 `
 export const ContentContainer = styled.div`
@@ -48,6 +55,16 @@ export const ImgContainer = styled.div`
       width: 60vw;
     }
   }
+
+  @media (max-width: 926px) {
+    margin: 0 auto;
+    justify-content: center;
+
+    img {
+      margin-top: 2rem;
+      width: 40vw;
+    }
+  }
 `
 
 export const ItemsContainer = styled.div`
@@ -62,5 +79,8 @@ export const ItemsContainer = styled.div`
     grid-template-columns: 1fr;
     justify-content: center;
     flex-direction: column;
+  }
+
+  @media (max-width: 926px) {
   }
 `

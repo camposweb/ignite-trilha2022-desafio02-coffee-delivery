@@ -7,6 +7,14 @@ export const CartEmptyContainer = styled.main`
   @media (max-width: 768px) {
     padding: 0 3rem;
   }
+
+  @media (max-width: 926px) {
+    padding: 0rem 3rem;
+  }
+
+  @media (max-width: 1080px) {
+    padding: 0rem 3rem;
+  }
 `
 
 export const CartEmptyContent = styled.div`

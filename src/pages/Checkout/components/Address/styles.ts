@@ -7,6 +7,10 @@ export const AddressContainer = styled.div`
   /* @media (max-width: 768px) {
     padding: 0 3rem;
   } */
+  @media (width: 1080px) {
+    max-width: 35rem;
+  }
+
   @media (width: 1366px) {
     max-width: 38rem;
   }

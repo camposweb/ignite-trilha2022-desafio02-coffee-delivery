@@ -18,7 +18,11 @@ export const CheckoutContentContainer = styled.form`
 
   @media (max-width: 926px) {
     flex-direction: column;
-    //padding: 0 3rem;
+    padding: 0 3rem;
+  }
+
+  @media (width: 1080px) {
+    padding: 0 3rem;
   }
 
   @media (width: 1366px) {
